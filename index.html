@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Main Css -->
   <link rel="stylesheet" href="styles.css">
+  <!-- Main Js -->
+  <script defer src="script.js"></script>
   <title>Newsletter</title>
 </head>
 <body>
@@ -23,16 +25,17 @@
         <li><img src="./assets/images/icon-list.svg" alt="check" />And much more!</li>
       </ul>
       <!-- Email Form -->
-      <form id="email-form">
+      <form id="form" class="form" action="/">
         <label class="form-label dark-grey" for="email">Email address</label>
-        <input class="form-input" type="email" placeholder="email@company.com">
+        <input class="email" type="email" placeholder="email@company.com">
+        <!-- Error Messge -->
+        <div class="error red"></div>
+        <!-- Submit Button -->
+        <button class="submit-email" type="submit">
+          Subscribe to monthly newsletter
+        </button>
       </form>
-      <!-- Submit Button -->
-      <button class="form-btn" type="submit" form="email-form" value="submit">Subscribe to monthly newsletter</button>
     </div>
   </div>
-
-  <!-- Main Js -->
-  <script src="script.js"></script>
 </body>
 </html>
