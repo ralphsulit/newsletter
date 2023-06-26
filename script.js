@@ -1,6 +1,5 @@
 const email = document.querySelector('.email');
 const form = document.querySelector('.form');
-const userEmail = document.querySelector('.user-email');
 const errorElement = document.querySelector('.error');
 
 form.addEventListener('submit', (e) => {
@@ -17,10 +16,33 @@ form.addEventListener('submit', (e) => {
     email.style.borderColor = 'hsl(4, 100%, 67%)';
     email.style.backgroundColor = 'hsl(4.8,100%,95.1%)';
   } else {
-    window.location.href = './success-page/success-page.html?email=' + encodeURIComponent(emailValue);
+    window.location.href = 'success-page.html?email=' + encodeURIComponent(emailValue);
   }
   
   if (messages.length > 0) {
     errorElement.innerText = messages.join(', ');
   }
 });
+
+
+
+//////////////////////
+////Success Page Script
+//////////////////////
+const urlParams = new URLSearchParams(window.location.search);
+const successEmail = urlParams.get("email");
+const userEmail = document.querySelector('.user-email');
+
+// Inster email in user-email span from homepage
+userEmail.innerText = successEmail;
+
+const successForm = document.querySelector('.form');
+
+// when clicked the user will go back to homepage
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  window.location.href = 'index.html';
+})
+
+
